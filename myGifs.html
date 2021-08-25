@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mis gifos</title>
+</head>
+<body id="dark">
+
+    <!-- Header section -->
+
+    <header>
+        <nav class="headerContainer">
+            <a id="logoDesktopNormal" href="index.html"><img id="imageLogo" src="./assets/logo-mobile.svg" alt="logogifos"></a>
+            <ul class="items" id="items">
+                <a href="#" id="btnSwitch">MODO NOCTURNO</a>
+                <a href="favourites.html">FAVORITOS</a>
+                <a href="myGifs.html">MIS GIFOS</a>
+                <a href="createOwnGifs.html"><img src="./assets/button-crear-gifo.svg" id="createGifs" alt="creargifs"></a>
+            </ul>
+            <a href="#" class="hamIcon" id="hamIcon"><img id="hamIconImg" src="./assets/burger.svg" alt="" srcset=""></a>
+        </nav>
+    </header>
+
+    <!-- Title section -->
+
+    <img class="titleImageSection" src="./assets/icon-mis-gifos.svg" alt="icono mis gifos">
+    <h2 class="titleMyGifs">Mis GIFOS</h2>
+
+    <!-- My own gifos section -->
+    
+    <section class="noOwnGifs" id="noOwnGifs">
+        <img src="./assets/icon-mis-gifos-sin-contenido.svg" alt="No hay gifs creados!">
+        <p>¡Anímate a crear tu primer GIFO!</p>
+    </section>
+
+    <article id="fullSizeOverlay" class="fullSizeOverlay"></article>
+
+    <section>
+        <ul class="gifSourcesMyOwnGif" id="gifSourcesMyOwnGif"></ul>
+    </section>
+
+    <button id="showMore" class="showMore">VER MÁS</button>
+
+    <!-- Trending gifos -->
+
+    <section class="trendingGifos">
+        <div class="textoTrendingGifos">
+            <h2 class="titleGIFOS">Trending GIFOS</h2>
+            <p class="checkThemOut">Mirá los últimos GIFOS de nuestra comunidad</p>
+        </div>
+        <div class="sliders">
+            <button id="buttonSliderLeft" class="buttonSliderLeft"><img class="arrowLeft" id="arrowLeft" src="./assets/button-slider-left.svg" alt="pasar gif a la izquierda"/></button>
+            <ul class="gifSources" id="gifSources"></ul>
+            <button id="buttonSliderRight" class="buttonSliderRight"><img class="arrowRight" id="arrowRight" src="./assets/Button-Slider-right.svg" alt="pasar gif a la derecha"></button>
+        </div>
+    </section>
+
+       <!-- Footer -->
+    <footer class="footerContainer">
+        <div class="SharePlusIcon">
+            <p class="share">Compartir en:</p>
+            <div class="icons">
+                <a class="normal" href="https://www.facebook.com/"><img id="fb" src="./assets/icon_facebook.svg"
+                        alt="Facebook"></a>
+                <a class="normal" href="https://twitter.com/home"><img id="tw" src="./assets/icon-twitter.svg"
+                        alt="Twitter"></a>
+                <a class="normal" href="https://www.instagram.com/"><img id="ig" src="./assets/icon_instagram.svg"
+                        alt="Instagram"></a>
+            </div>
+        </div>
+        <p class="copyright">© GIFOS 2021 All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/header.js"></script>
+    <script src="js/myGifs.js" type="module"></script>
+    <script src="js/trendingGifos.js" type="module"></script>
+    <script src="js/nocturnemode.js"></script>    
+</body>
+</html>

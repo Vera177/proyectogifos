@@ -1,0 +1,515 @@
+/* Searching */
+
+//keyup suggestion section
+
+.results ul {
+    margin: 0;
+    padding: 0;
+}
+
+.results ul li {
+    list-style: none;
+    border-radius: 3px;
+    padding: 8px 12px;
+    transition: all 0.5s linear;
+    font-family: $textoRobotRegular;
+    font-size: 16px;
+    color: $colorGreyNocturneMode;
+    text-align: left;
+}
+
+.searchSuggestionsMagnifyLens {
+    width: 15.8px;
+    height: 15.8px;
+}
+
+.results ul li:hover {
+    background: #ececec;
+    cursor: pointer;
+}
+
+.lineGray {
+    border-bottom: 1px solid grey;
+    opacity: 0.5;
+    width: 505px;
+    height: 3px;
+    margin: auto;
+}
+
+//click search section and renderize
+
+.title {
+    margin-top: 76px;
+    text-align: center;
+    font-family: $textoMontserratBold;
+    color: $colorPurple;
+    font-size: 25px;
+    line-height: 50px;
+    // height: 100px;
+    // width: 934px;
+    text-align: center;
+
+    span {
+        color: $colorGreenTryAgain;
+    }
+}
+
+.helloImg {
+    margin: auto;
+    display: block;
+    margin-top: 24px;
+    width: 84vw;
+}
+
+.searchSectionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    body.dark & h1 {
+        color: $colorWhite;
+    }
+
+    .resultContainer {
+
+        .titleSearch {
+            display: none;
+        }
+    }
+
+    .searchFailed {
+        margin-bottom: 22.3%;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 462px;
+
+        h2 {
+            color: $colorPurple;
+            font-family: $textoMontserratBold;
+            font-size: 30px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        img {
+            margin: 0 auto;
+         }
+
+        p {
+            font-family: $textoMontserratBold;
+            font-size: 30px;
+            color: $colorGreenTryAgain;
+            text-align: center;
+            line-height: 30px;
+        }
+    }
+}
+
+.searchContainer {
+    text-align: center;
+    // position: relative;
+    // height: 40%;
+    width: 84vw;
+    border: 1px solid $colorPurple;
+    border-radius: 27px;
+
+    body.dark & {
+        border: 1px solid $colorWhite;
+    }
+
+    .searchInput {
+        // position: relative;
+        border: none;
+        color: $colorTextBlack;
+        height: 5vh;
+        width: 83%;
+        text-align: center;
+        outline: none;
+
+        body.dark &{
+            background: $colorGreyDarkMode;
+            color: $colorWhite;
+        }
+    }
+
+    .searchIcon {
+        // position: absolute;
+        height: 20px;
+        width: 20px;
+        right: 20px;
+        top: 5px;
+    }
+}
+
+.titleSearchedGifs {
+    display: block;
+    font-family: $textoMontserratBold;
+    color: $colorPurple;
+    text-align: center;
+    font-size: 35px;
+    line-height: 30px;
+    margin-top: 81.9px;
+    margin-bottom: 59px;
+
+    body.dark & {
+        color: $colorWhite;
+    }
+}
+
+.thinLineHidden {
+    display: none;
+}
+
+.thinLine {
+    // display: flex;
+    // justify-content: center;
+    width: 95%;
+    margin-top: 55px;
+    opacity: 0.5;
+    height: 0.1px;
+
+    hr {
+        width: 338px;
+        border: 1px solid $colorGreyNocturneMode;
+    }
+}
+
+.gifCardsFounded:empty {
+    display: none;
+}
+
+.gifCardsFounded {
+    // margin-left: 156px;
+    // margin-right: 157px;
+    margin-bottom: 78px;
+    // max-height: 659px;
+    display: grid;
+    grid-gap: 20px;
+    // align-items: end;
+    // grid-auto-rows: (200px);
+    // grid-template-rows: repeat(7, 200px);
+    grid-template-columns: repeat(4, 260px);
+    padding: 0;
+    list-style: none;
+
+    @media (max-width: 500px) {
+        grid-template-columns: repeat(2, 156px);
+    }
+
+    img {
+        width: 100%;
+        height: 200px;
+
+        @media (max-width: 500px) {
+            height: 120px;
+        }
+    }
+
+    .overlayGifsSearch {
+        display: none;
+    }
+
+    .cardGifoSearch:hover {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        .overlayGifsSearch {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: RGBA(87, 46, 229, 0.5);
+            width: 100%;
+            height: 100%;
+
+            .infoTextGifs {
+                position: absolute;
+                bottom: 51px;
+                left: 15px;
+                color: $colorWhite;
+
+                :first-child {
+                    font-family: $textoRobotRegular;
+                    font-size: 15px;
+                }
+
+                :nth-child(2) {
+                    font-family: $textoRobotoBold;
+                    font-size: 16px;
+                }
+            }
+
+            .buttonsCardSearch {
+                position: absolute;
+                right: 3%;
+                top: -32%;
+            }
+
+            button {
+                width: 32px;
+                height: 32px;
+                border: none;
+                background: transparent;
+            }
+        }
+    }
+}
+
+/* Trending searchs*/
+
+.none {
+    display: none;
+}
+
+.trending {
+    font-family: $textoMontserratBold;
+    color: $colorPurple;
+    text-align: center;
+    line-height: 25px;
+    margin-top: 73px;
+    margin-bottom: 95px;
+    transition: 0.3s ease all;
+
+    .subtitle {
+        margin-top: 7px;
+
+        body.dark & {
+            color: $colorWhite;
+        }
+    }
+
+    .trendingSearchs {
+        body.dark & {
+            color: $colorWhite;
+        }
+    }
+
+    .trendingSearchs > .trendingSearch:hover {
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+
+/* Trending gifs */
+
+.trendingGifos {
+    background: $colorWhiteGrey;
+    height: 640px;
+
+    body.dark & {
+        background: $colorBlackDarkMode;
+
+        .titleGIFOS {
+            color: $colorWhite;
+        }
+
+        .checkThemOut {
+            color: $colorWhite;
+        }
+    }
+}
+
+.titleGIFOS {
+    font-family: $textoMontserratBold;
+    font-size: 25px;
+    color: $colorPurple;
+    text-align: center;
+    line-height: 30px;
+    padding-top: 67px;
+}
+
+.checkThemOut {
+    font-family: $textoRobotRegular;
+    font-size: 18px;
+    color: $colorTextBlack;
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 53px;
+}
+
+.sliders {
+    display: flex;
+    justify-content: center;
+
+    .buttonSliderLeft,
+    .buttonSliderRight {
+        border: none;
+        background: transparent;
+        display: inline-block;
+        //resetear formato por default
+        margin: 16px;
+    }
+
+    .gifSources {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-rows: 250px;
+        grid-template-columns: repeat(15, 357px);
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+        scroll-behavior: smooth;
+        width: 1117px;
+        height: 270px;
+
+        li > img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .overlay {
+        display: none;
+    }
+
+    .cardGifo:hover {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        .overlay {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: RGBA(87, 46, 229, 0.5);
+            width: 100%;
+            height: 100%;
+
+            .infoTextGifs {
+                position: absolute;
+                bottom: 51px;
+                left: 15px;
+                color: $colorWhite;
+
+                :first-child {
+                    font-family: $textoRobotRegular;
+                    font-size: 15px;
+                }
+
+                :nth-child(2) {
+                    font-family: $textoRobotoBold;
+                    font-size: 16px;
+                }
+            }
+
+            .buttonsCard {
+                position: absolute;
+                right: 10px;
+                top: 10px;
+            }
+
+            button {
+                width: 32px;
+                height: 32px;
+                border: none;
+                background: transparent;
+            }
+        }
+    }
+}
+
+// fullSize popUp
+
+.fullSizeOverlay {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    background-color: #fff;
+    color: #000000;
+    text-align: center;
+    position: fixed;
+}
+
+.fullSizeContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.hideContent {
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-right: 10%;
+
+    @media (max-width: 765px) {
+        margin-right: 0;
+    }
+}
+
+.imageInfoContainer {
+    width: 55%;
+    margin-top: 25px;
+
+    @media (max-width: 765px) {
+        width: 100%;
+    }
+
+    @media (min-width: 907px) {
+        width: 45%;
+    }
+
+    @media (min-width: 1200px) {
+        width: 35%;
+    }
+
+    .superSizeImage {
+        width: 100%;
+        height: auto;
+
+        @media (max-width: 765px) {
+            padding: 0 20px;
+        }
+    }
+
+    .info {
+        display: flex;
+        justify-content: space-between;
+        margin: 17px;
+    }
+
+    .buttons > button {
+        border: none;
+        cursor: pointer;
+        background-color: unset;
+    }
+}
+
+// activate full size view
+
+.active {
+    display: block;
+}
+
+@media (min-width: 768px) {
+
+    .helloImg {
+        margin: auto;
+        display: block;
+        margin-top: 24px;
+        width: 40vw;
+    }
+
+    .searchContainer {
+        text-align: center;
+        position: relative;
+        border: 1px solid $colorPurple;
+        border-radius: 27px;
+        // height: 50px;
+        width: 40vw;
+    }
+
+    .title {
+        font-size: 35px;
+    }
+}

@@ -1,0 +1,22 @@
+@import 'css/variables';
+@import 'css/header';
+@import 'css/body';
+@import 'css/footer';
+@import 'css/nocturnemode';
+@import 'css/createMyOwnGifs';
+@import 'css/myGifs';
+@import 'css/favourites';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; // evita que desborde el contenido de la caja
+} // reiniciar estilos
+
+body {
+    // width: 80%;
+    // border: 1px solid black;
+    margin: 0 auto;
+}
+
+//buena práctica reiniciar estilos. 

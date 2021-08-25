@@ -1,0 +1,9 @@
+body {
+    background: $colorWhite;
+    transition: .3s ease all;
+
+    &.dark {
+        background: $colorGreyDarkMode;
+        transition: .3s ease all;
+    }
+}

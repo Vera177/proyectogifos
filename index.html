@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIFOS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+<!-- No me está tomando las fuentes :( -->
+<body id="dark">
+
+    <!-- Header section -->
+
+    <header>
+        <nav class="headerContainer">
+            <a id="logoDesktopNormal" href="index.html"><img id="imageLogo" src="./assets/logo-mobile.svg" alt="logogifos"></a>
+            <ul class="items" id="items">
+                <li><a href="#" id="btnSwitch">MODO NOCTURNO</a></li>
+                <li><a href="favourites.html">FAVORITOS</a></li>
+                <li><a href="myGifs.html">MIS GIFOS</a></li>
+                <li><a href="createOwnGifs.html"><img src="./assets/button-crear-gifo.svg" id="createGifs" alt="creargifs"></a></li>
+            </ul>
+            <a href="#" class="hamIcon" id="hamIcon"><img id="hamIconImg" src="./assets/burger.svg" alt="Menu desplegable"></a>
+        </nav>
+    </header>
+
+
+    <!-- Search section -->
+
+    <section class="searchSectionContainer">
+        <h1 class="title">Inspírate, busca, guarda, y crea <br> los mejores <span>GIFOS</span></h1>
+        <img class="helloImg" src="./assets/ilustra_header.svg" alt="">
+        <div class="searchContainer">
+            <input type="text" class="searchInput" id="searchInput" placeholder="Busca GIFOS y más">
+            <img class="searchIcon" id="searchIcon" src="./assets/icon-search.svg" alt="buscar">
+            <div id="thinLineSuggestion"></div>
+            <div class="results" id="resultsWrapper"> <!-- suggest results --></div>
+        </div>
+        <div id="resultContainer" class="resultContainer">
+            <hr class="thinLineHidden" id="thinLine">
+            <h2 class="titleSearch" id="titleSearch">Búsqueda realizada</h2>
+            <ul id="gifCardsFounded" class="gifCardsFounded"></ul>
+            <div class="searchFailed" id="searchFailed">
+                <h2>Lorem Ipsum</h2>
+                <img src="./assets/icon-busqueda-sin-resultado.svg" alt="búsqueda sin resultado">
+                <p>Intenta con otra búsqueda</p>
+            </div>
+        </div>
+
+        <button id="showMore" class="none">VER MÁS</button>
+    </section>
+
+    <!-- Trending search section -->
+
+    <section class="trending" id="trending">
+        <h3 class="subtitle">Trending</h3>
+        <p class="trendingSearchs" id="trendingSearchs">Reactions, Entertenment, Sports, Stickers, Artists</p>
+    </section>
+
+    <!-- Trending gifos -->
+
+    <section class="trendingGifos">
+        <div class="textoTrendingGifos">
+            <h2 class="titleGIFOS">Trending GIFOS</h2>
+            <p class="checkThemOut">Mirá los últimos GIFOS de nuestra comunidad</p>
+        </div>
+        <div class="sliders">
+            <button id="buttonSliderLeft" class="buttonSliderLeft"><img class="arrowLeft" id="arrowLeft" src="./assets/button-slider-left.svg" alt="pasar gif a la izquierda" /></button>
+            <ul class="gifSources" id="gifSources"></ul>
+            <button id="buttonSliderRight" class="buttonSliderRight"><img class="arrowRight" id="arrowRight" src="./assets/Button-Slider-right.svg" alt="pasar gif a la derecha"></button>
+        </div>
+        
+        <div class="fullSizeOverlay" id="fullSizeOverlay"></div>
+        
+    </section>
+
+    <!-- Footer -->
+    <footer class="footerContainer">
+        <div class="SharePlusIcon">
+            <p class="share">Compartir en:</p>
+            <div class="icons">
+                <a class="normal" href="https://www.facebook.com/"><img id="fb" src="./assets/icon_facebook.svg"
+                        alt="Facebook"></a>
+                <a class="normal" href="https://twitter.com/home"><img id="tw" src="./assets/icon-twitter.svg"
+                        alt="Twitter"></a>
+                <a class="normal" href="https://www.instagram.com/"><img id="ig" src="./assets/icon_instagram.svg"
+                        alt="Instagram"></a>
+            </div>
+        </div>
+        <p class="copyright">© GIFOS 2021 All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/header.js"></script>
+    <script src="js/index.js" type="module"></script>
+    <script src="js/trendingGifos.js" type="module"></script>
+    <script src="js/nocturnemode.js"></script>
+
+</body>
+
+</html>

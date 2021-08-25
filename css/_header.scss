@@ -1,0 +1,133 @@
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    width: 95%;
+    margin: 0 auto;
+
+    .hamIcon {
+        margin-right: 10px;
+    }
+
+    #logoDesktopNormal {
+        width: 68px;
+        height: 60px;
+    }
+
+    .items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 120%;
+        height: 92vh;
+        justify-content: space-evenly;
+        background-color: $colorPurple;
+        opacity: 90%;
+        margin: 0;
+        padding: 0;
+        top: 13%;
+        position: fixed;
+        display: none;
+
+        body.dark & {
+            background-color: $colorTextBlack;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            font-family: $textoMontserratBold, sans-serif;
+            color: $colorWhite;
+            font-size: 13px;
+            font-weight: 600;
+
+            &:hover {
+                //umpersands
+                border-bottom: 2px solid $colorGreenTryAgain;
+            }
+
+            &:active {
+                color: $colorGreyNocturneMode;
+            }
+        }
+    }
+
+    .items.active {
+        display: flex;
+    }
+
+    .logos {
+        justify-content: flex-start;
+    }
+
+    body.dark & {
+        a {
+            color: $colorWhite;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .headerContainer {
+        display: flex;
+        justify-content: space-between;
+        height: 90px;
+        margin-bottom: 4px;
+
+        #logoDesktopNormal {
+            width: 68px;
+            height: 60px;
+            display: block;
+        }
+
+        .items {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 40%;
+            height: fit-content;
+            justify-content: space-between;
+            background-color: transparent;
+            position: relative;
+
+            body.dark & {
+                background-color: transparent;
+            }
+
+            a {
+                text-decoration: none;
+                font-family: $textoMontserratBold, sans-serif;
+                color: $colorPurple;
+                font-size: 13px;
+                font-weight: 600;
+
+                &:hover {
+                    //umpersands
+                    border-bottom: 2px solid $colorGreenTryAgain;
+                }
+
+                &:active {
+                    color: $colorGreyNocturneMode;
+                }
+            }
+        }
+
+        .hamIcon {
+            display: none;
+        }
+
+        .logos {
+            justify-content: flex-start;
+        }
+
+        body.dark & {
+            a {
+                color: $colorWhite;
+            }
+        }
+    }
+}

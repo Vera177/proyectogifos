@@ -1,0 +1,273 @@
+/*Video container*/
+.videoSection {
+    position: relative;
+
+    .movie {
+        display: flex;
+        justify-content: space-between;
+        width: 82%;
+        margin: 0 auto;
+    }
+
+    .cameraImageElements {
+        display: flex;
+        // margin-left: -195px;
+        // margin-top: 118px;
+        // position: absolute;
+    }
+
+    .reelFilm {
+        align-content: space-between;
+        align-self: flex-end;
+    }
+    .button_chronometer {
+        // position: relative;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .chronometer {
+            display: none;
+            // position: absolute;
+            font-family: $textoMontserratBold;
+            font-size: 15px;
+            color: $colorPurple;
+            letter-spacing: 0;
+            text-align: center;
+            line-height: 22px;
+
+            body.dark & {
+                color: $colorWhite;
+                border-color: $colorWhite;
+            }
+
+            .repeat {
+                display: none;
+                cursor: pointer;
+
+                &:hover {
+                    border-bottom: 2px solid $colorGreenTryAgain;
+                }
+
+                body.dark & {
+                    color: $colorWhite;
+                    border-color: $colorWhite;
+                }
+            }
+        }
+
+        button {
+            background: none;
+            color: $colorPurple;
+            font-family: $textoRobotoMedium;
+            font-size: 18px;
+            border: 1px solid $colorPurple;
+            text-align: center;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            margin-top: 24px;
+            margin-right: 25px;
+            // justify-content: center;
+            //    margin-left: 648px;
+            //    display: inline-block;
+
+            body.dark & {
+                color: $colorWhite;
+                border-color: $colorWhite;
+            }
+        }
+
+        .stepActive {
+            background-color: $colorPurple;
+            color: $colorWhite;
+
+            body.dark & {
+                background-color: $colorWhite;
+                color: $colorTextBlack;
+                border-color: $colorWhite;
+            }
+        }
+    }
+}
+
+.videoContainer {
+    width: 688px;
+    height: 390px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border: 1px solid $colorPurple;
+    position: relative;
+
+    .topLeft {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        border-top: 1px solid $colorGreenTryAgain;
+        border-left: 1px solid $colorGreenTryAgain;
+        width: 27px;
+        height: 25px;
+        // display: inline-block;
+    }
+
+    .topRight {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        border-top: 1px solid $colorGreenTryAgain;
+        border-right: 1px solid $colorGreenTryAgain;
+        width: 27px;
+        height: 25px;
+    }
+
+    .bottomRight {
+        position: absolute;
+        bottom: 19px;
+        right: 20px;
+        border-bottom: 1px solid $colorGreenTryAgain;
+        border-right: 1px solid $colorGreenTryAgain;
+        width: 27px;
+        height: 25px;
+    }
+
+    .bottomLeft {
+        position: absolute;
+        bottom: 19px;
+        left: 20px;
+        border-bottom: 1px solid $colorGreenTryAgain;
+        border-left: 1px solid $colorGreenTryAgain;
+        width: 27px;
+        height: 25px;
+    }
+
+    .overlay {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: $colorPurple;
+        opacity: 0.6;
+        color: $colorWhite;
+        font-size: 15px;
+        font-family: $textoMontserratBold;
+        width: 480px;
+        height: 320px;
+        position: absolute;
+        display: none;
+        text-align: center;
+
+        .loading {
+            align-content: center;
+        }
+    }
+
+    & h2 {
+        text-align: center;
+    }
+
+    & p {
+        text-align: center;
+    }
+
+    .videoElement {
+        width: 480px;
+        height: 320px;
+        display: none;
+    }
+
+    .showVideo {
+        display: block;
+    }
+}
+
+.hideSomething {
+    width: 480px;
+    height: 320px;
+    display: none;
+}
+
+.showSomething {
+    display: block;
+}
+
+/* button styles */
+
+.btnStart {
+    border: 1px solid $colorPurple;
+    border-radius: 25px;
+    background: transparent;
+    color: $colorPurple;
+    font-family: $textoMontserratBold;
+    font-size: 13px;
+    text-align: center;
+    height: 50px;
+    width: 127px;
+    display: block;
+    margin: auto;
+    margin-top: 102px;
+
+    &:hover {
+        background-color: $colorPurple;
+        color: $colorWhite;
+    }
+
+    body.dark & {
+        color: $colorWhite;
+        border: 1px solid $colorWhite;
+
+        &:hover {
+            background-color: $colorWhite;
+            color: $colorTextBlack;
+        }
+    }
+}
+
+/* style line */
+
+.longLine {
+    width: 795.9px;
+    height: 6.9px;
+    background: $colorPurple;
+    margin: 15px auto;
+}
+
+/*text styles */
+
+.titleCreateGifo {
+    font-family: $textoMontserratBold;
+    color: $colorPurple;
+    font-size: 25px;
+    text-align: center;
+    line-height: 35px;
+
+    span {
+        color: $colorGreenTryAgain;
+    }
+}
+
+.subtitleCreateGifo {
+    font-family: $textoRobotRegular;
+    font-size: 16px;
+    color: $colorTextBlack;
+    line-height: 29px;
+    text-align: center;
+}
+
+/* nocturne mode */
+
+.videoContainer {
+    body.dark & {
+        border: 1px solid $colorWhite;
+    }
+
+    body.dark & .titleCreateGifo {
+        color: $colorWhite;
+    }
+
+    body.dark & .subtitleCreateGifo {
+        color: $colorWhite;
+    }
+}
