@@ -173,7 +173,7 @@ function uploadgGif() {
   step3.classList.add('stepActive');
   overlay.style.display = 'flex';
 
-  let send = fetch(`http://upload.giphy.com/v1/gifs?api_key=${apiKey}&file=${form}`, { method: 'POST', body: form });
+  let send = fetch(`https://upload.giphy.com/v1/gifs?api_key=${apiKey}&file=${form}`, { method: 'POST', body: form });
 
   send.then(
     (sucess) => {
