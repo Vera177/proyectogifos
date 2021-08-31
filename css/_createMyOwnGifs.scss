@@ -1,4 +1,5 @@
 /*Video container*/
+
 .videoSection {
     position: relative;
 
@@ -10,7 +11,7 @@
     }
 
     .cameraImageElements {
-        display: flex;
+        display: none;
         // margin-left: -195px;
         // margin-top: 118px;
         // position: absolute;
@@ -19,6 +20,7 @@
     .reelFilm {
         align-content: space-between;
         align-self: flex-end;
+        display: none;
     }
     .button_chronometer {
         // position: relative;
@@ -228,7 +230,7 @@
 /* style line */
 
 .longLine {
-    width: 795.9px;
+    width: 48%;
     height: 6.9px;
     background: $colorPurple;
     margin: 15px auto;
@@ -269,5 +271,18 @@
 
     body.dark & .subtitleCreateGifo {
         color: $colorWhite;
+    }
+}
+
+@media (min-width: $desktop) {
+    
+    .videoSection {
+        .cameraImageElements {
+            display: flex;
+        }
+
+        .reelFilm {
+            display: block;
+        }
     }
 }
