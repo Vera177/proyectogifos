@@ -26,9 +26,10 @@
         opacity: 90%;
         margin: 0;
         padding: 0;
-        top: 13%;
+        top: 8%;
         position: fixed;
         display: none;
+        z-index: 2;
 
         body.dark & {
             background-color: $colorTextBlack;
@@ -74,26 +75,21 @@
 @media (min-width: $desktop) {
     
     .headerContainer {
-        display: flex;
-        justify-content: space-between;
-        height: 90px;
         margin-bottom: 4px;
 
         #logoDesktopNormal {
-            width: 68px;
-            height: 60px;
             display: block;
         }
 
         .items {
             display: flex;
             flex-direction: row;
-            align-items: center;
             width: 40%;
             height: fit-content;
             justify-content: space-between;
             background-color: transparent;
             position: relative;
+            z-index: 1;
 
             body.dark & {
                 background-color: transparent;
