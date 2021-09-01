@@ -112,7 +112,7 @@ body.dark .headerContainer a {
             justify-content: space-between;
     background-color: transparent;
     position: relative;
-    z-index: 1;
+    z-index: 0;
   }
   body.dark .headerContainer .items {
     background-color: transparent;
@@ -372,8 +372,8 @@ body.dark .titleSearchedGifs {
 
 .gifCardsFounded .cardGifoSearch:hover .overlayGifsSearch .infoTextGifs {
   position: absolute;
-  bottom: 51px;
-  left: 15px;
+  bottom: 6%;
+  left: 4%;
   color: #FFFFFF;
 }
 
@@ -389,15 +389,20 @@ body.dark .titleSearchedGifs {
 
 .gifCardsFounded .cardGifoSearch:hover .overlayGifsSearch .buttonsCardSearch {
   position: absolute;
-  right: 3%;
-  top: -32%;
+  top: 2%;
+  right: 2%;
 }
 
-.gifCardsFounded .cardGifoSearch:hover .overlayGifsSearch button {
+.gifCardsFounded .cardGifoSearch:hover .overlayGifsSearch .buttonsCardSearch button {
   width: 32px;
   height: 32px;
   border: none;
   background: transparent;
+}
+
+.gifCardsFounded .cardGifoSearch:hover .overlayGifsSearch .buttonsCardSearch button img {
+  width: 100%;
+  height: 100%;
 }
 
 /* Trending searchs*/
@@ -529,8 +534,8 @@ body.dark .trendingGifos .checkThemOut {
 
 .sliders .cardGifo:hover .overlay .infoTextGifs {
   position: absolute;
-  bottom: 51px;
-  left: 15px;
+  bottom: 6%;
+  left: 4%;
   color: #FFFFFF;
 }
 
@@ -546,8 +551,8 @@ body.dark .trendingGifos .checkThemOut {
 
 .sliders .cardGifo:hover .overlay .buttonsCard {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 2%;
+  top: 2%;
 }
 
 .sliders .cardGifo:hover .overlay button {
@@ -1163,8 +1168,8 @@ body.dark .titleMyGifs {
 
 .cardGifoMyOwnGif:hover .overlayMyOwnGif .infoTextGifs {
   position: absolute;
-  bottom: 51px;
-  left: 15px;
+  bottom: 6%;
+  left: 4%;
   color: #FFFFFF;
 }
 
@@ -1180,15 +1185,20 @@ body.dark .titleMyGifs {
 
 .cardGifoMyOwnGif:hover .overlayMyOwnGif .buttonsCardMyOwnGif {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  top: 2%;
+  right: 2%;
 }
 
-.cardGifoMyOwnGif:hover .overlayMyOwnGif button {
+.cardGifoMyOwnGif:hover .overlayMyOwnGif .buttonsCardMyOwnGif button {
   width: 32px;
   height: 32px;
   border: none;
   background: transparent;
+}
+
+.cardGifoMyOwnGif:hover .overlayMyOwnGif .buttonsCardMyOwnGif img {
+  width: 100%;
+  height: 100%;
 }
 
 .MyGifsWithoutContent {
@@ -1322,8 +1332,8 @@ body.dark .titleFavourites {
 
 .cardGifo:hover .overlayFavourite .infoTextGifs {
   position: absolute;
-  bottom: 51px;
-  left: 15px;
+  bottom: 6%;
+  left: 4%;
   color: #FFFFFF;
 }
 
@@ -1339,15 +1349,20 @@ body.dark .titleFavourites {
 
 .cardGifo:hover .overlayFavourite .buttonsCardFavourite {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  top: 2%;
+  right: 2%;
 }
 
-.cardGifo:hover .overlayFavourite button {
+.cardGifo:hover .overlayFavourite .buttonsCardFavourite button {
   width: 32px;
   height: 32px;
   border: none;
   background: transparent;
+}
+
+.cardGifo:hover .overlayFavourite .buttonsCardFavourite button img {
+  width: 100%;
+  height: 100%;
 }
 
 /* Button style */

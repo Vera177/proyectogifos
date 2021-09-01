@@ -1,6 +1,6 @@
 /* Title section */
 
-.titleFavouriteSection{
+.titleFavouriteSection {
     margin-top: 10px;
     margin-bottom: 8.1px;
     display: block;
@@ -23,7 +23,6 @@
 /* Favourite's section */
 
 .noFavGifs {
-
     display: none;
     flex-direction: column;
     align-items: center;
@@ -45,7 +44,6 @@
 }
 
 .gifFavourites {
-
     display: grid;
     justify-content: center;
     grid-gap: 20px;
@@ -73,38 +71,43 @@
         position: absolute;
         top: 0;
         left: 0;
-        background-color: RGBA(87,46,229,.5);
+        background-color: RGBA(87, 46, 229, 0.5);
         width: 100%;
         height: 100%;
 
-            .infoTextGifs {
-                position: absolute;
-                bottom: 51px;
-                left: 15px;
-                color: $colorWhite;
+        .infoTextGifs {
+            position: absolute;
+            bottom: 6%;
+            left: 4%;
+            color: $colorWhite;
 
-                :first-child {
-                    font-family: $textoRobotRegular;
-                    font-size: 15px;
-                }
-
-                :nth-child(2) {
-                    font-family: $textoRobotoBold;
-                    font-size: 16px;
-                }
+            :first-child {
+                font-family: $textoRobotRegular;
+                font-size: 15px;
             }
 
-            .buttonsCardFavourite {
-                position: absolute;
-                right: 10px;
-                top: 10px;
+            :nth-child(2) {
+                font-family: $textoRobotoBold;
+                font-size: 16px;
             }
-            
-        button {
-            width: 32px;
-            height: 32px;
-            border: none;
-            background: transparent;
+        }
+
+        .buttonsCardFavourite {
+            position: absolute;
+            top: 2%;
+            right: 2%;
+
+            button {
+                width: 32px;
+                height: 32px;
+                border: none;
+                background: transparent;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
         }
     }
 }
@@ -128,7 +131,7 @@
         color: $colorWhite;
         border-color: $colorWhite;
 
-        &:hover{
+        &:hover {
             color: $colorTextBlack;
             background-color: $colorWhite;
         }
@@ -137,7 +140,6 @@
 
 @media (min-width: $desktop) {
     .gifFavourites {
-
         grid-template-columns: repeat(4, 260px);
 
         li > img {
