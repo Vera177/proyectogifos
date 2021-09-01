@@ -646,16 +646,10 @@ body.dark .trendingGifos .checkThemOut {
 
 @media (min-width: 768px) {
   .helloImg {
-    margin: auto;
-    display: block;
-    margin-top: 24px;
     width: 40vw;
   }
   .searchContainer {
-    text-align: center;
     position: relative;
-    border: 1px solid #572EE5;
-    border-radius: 27px;
     width: 40vw;
   }
   .title {
