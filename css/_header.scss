@@ -96,35 +96,12 @@
             }
 
             a {
-                text-decoration: none;
-                font-family: $textoMontserratBold, sans-serif;
                 color: $colorPurple;
-                font-size: 13px;
-                font-weight: 600;
-
-                &:hover {
-                    //umpersands
-                    border-bottom: 2px solid $colorGreenTryAgain;
-                }
-
-                &:active {
-                    color: $colorGreyNocturneMode;
-                }
             }
         }
 
         .hamIcon {
             display: none;
-        }
-
-        .logos {
-            justify-content: flex-start;
-        }
-
-        body.dark & {
-            a {
-                color: $colorWhite;
-            }
         }
     }
 }

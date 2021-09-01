@@ -118,28 +118,10 @@ body.dark .headerContainer a {
     background-color: transparent;
   }
   .headerContainer .items a {
-    text-decoration: none;
-    font-family: Montserrat-Bold, sans-serif;
     color: #572EE5;
-    font-size: 13px;
-    font-weight: 600;
-  }
-  .headerContainer .items a:hover {
-    border-bottom: 2px solid #50E3C2;
-  }
-  .headerContainer .items a:active {
-    color: #9CAFC3;
   }
   .headerContainer .hamIcon {
     display: none;
-  }
-  .headerContainer .logos {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-  }
-  body.dark .headerContainer a {
-    color: #FFFFFF;
   }
 }
 
