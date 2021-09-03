@@ -1,3 +1,5 @@
+import { downloadFile } from "./modules/renderView.js";
+
 /* Create gifs */
 
 //start/recording variables
@@ -5,6 +7,7 @@ let apiKey = 'np4xYBCqbTJh3AtzJOzmHPfPPOJoafpg';
 let recorder, stream;
 let form = new FormData();
 let myGifs = [];
+let info;
 let btnStart = document.getElementById('btnStart');
 let video = document.getElementById('videoElement');
 let imageRecording = document.getElementById('resultRecording');
@@ -153,7 +156,7 @@ function stopRecordingCallback() {
   recorder.stopRecording(() => {
     imageRecording.src = URL.createObjectURL(recorder.getBlob());
     form.append('file', recorder.getBlob(), 'myGif.gif');
-    console.log(form.get('file'))
+    console.log(form.get('file'));
     btnStart.innerHTML = 'SUBIR GIFO';
     console.log(recorder);
 
@@ -183,7 +186,8 @@ function uploadgGif() {
     (response) => {
       // console.log(response)
       // console.log(response.data.id);
-      myGifs.push(response.data.id);
+      info = response.data.id;
+      myGifs.push(info);
       localStorage.setItem('mygifs', JSON.stringify(myGifs));
       imageUploadingGif();
     }
@@ -194,6 +198,55 @@ function imageUploadingGif() {
   loading.setAttribute('src', './assets/ok.svg');
   overlayLoadingText.innerHTML = 'GIFO subido con éxito';
   console.log('Gif uploaded succesfully!');
+  let buttonsUpload = document.createElement('div');
+  buttonsUpload.className = "buttonsUpload";
+  buttonsUpload.innerHTML = `<button id="download" class="download"><img src="./assets/icon-download.svg" alt="descargar"></button>
+  <button id="link" class="download"><img src="./assets/icon-link-normal.svg" alt="enlace"></button>`;
+  overlay.appendChild(buttonsUpload);
+  let downloadbtn = document.getElementById('download');
+  downloadbtn.addEventListener('click', () => {
+    downloadFunction(downloadbtn, info);
+  });
+}
+
+/* download function */
+
+async function downloadFunction(downloadbtn, info) {
+  console.log(info);
+
+  let request = await fetch(`https://api.giphy.com/v1/gifs/${info}?api_key=${apiKey}`);
+  let response = await request.json();
+  console.log(request, response);
+    // .then((response) => {
+    // console.log(response);
+    // console.log(getImage);
+    // .then((response) => {
+    //   let urlGifo = response.json();
+    //   console.log(response, urlGifo);
+    // });
+  // console.log(idGifo);
+  let urlGif = response.data.images.original.url;
+  downloadFile(urlGif, `${response.data.title}`);
+
+  // downloadbtn.addEventListener('click', () => {
+  //   let res = fetch(`https://api.giphy.com/v1/gifs/${info}?api_key=${apiKey}`)
+  //   // .then((response) => {
+  //   // console.log(response);
+  //   // console.log(getImage);
+  //   .then((response) => {
+  //     let urlGifo = response.json();
+  //     console.log(response, urlGifo);
+  //   });
+  //   let idGifo = urlGifo;
+  //   console.log(idGifo);
+  //   idGifo = info.data.images.original.url;
+  //   console.log('urlGifo', idGifo);
+  //   downloadFile(idGifo, `${info.data.title}`);
+  //   // })
+  //   // .catch((error) => {
+  //   //   console.error(error);
+  //   // });
+  // });
 }
 
 /* Chronometer */

@@ -1,7 +1,6 @@
 /*Video container*/
 
 .videoSection {
-
     .movie {
         display: flex;
         justify-content: space-between;
@@ -94,7 +93,7 @@
 }
 
 .videoContainer {
-    width: 688px;
+    width: 100%;
     height: 390px;
     display: flex;
     flex-direction: column;
@@ -154,14 +153,20 @@
         color: $colorWhite;
         font-size: 15px;
         font-family: $textoMontserratBold;
-        width: 480px;
-        height: 320px;
+        width: 80%;
+        height: 80%;
         position: absolute;
         display: none;
         text-align: center;
 
         .loading {
             align-content: center;
+        }
+
+        .buttonsUpload {
+            position: absolute;
+            top: 2%;
+            right: 2%;
         }
     }
 
@@ -174,8 +179,8 @@
     }
 
     .videoElement {
-        width: 480px;
-        height: 320px;
+        width: 80%;
+        height: 80%;
         display: none;
     }
 
@@ -185,8 +190,8 @@
 }
 
 .hideSomething {
-    width: 480px;
-    height: 320px;
+    width: 80%;
+    height: 80%;
     display: none;
 }
 
@@ -233,6 +238,11 @@
     height: 6.9px;
     background: $colorPurple;
     margin: 15px auto;
+    border: none;
+
+    body.dark & {
+        background: $colorWhite;
+    }
 }
 
 /*text styles */
@@ -274,7 +284,6 @@
 }
 
 @media (min-width: $desktop) {
-    
     .videoSection {
         .cameraImageElements {
             display: flex;
