@@ -952,6 +952,10 @@ body.dark .videoSection .button_chronometer .stepActive {
   right: 2%;
 }
 
+.videoContainer .overlay .buttonsUpload button {
+  cursor: pointer;
+}
+
 .videoContainer h2 {
   text-align: center;
 }

@@ -8,6 +8,7 @@ let recorder, stream;
 let form = new FormData();
 let myGifs = [];
 let info;
+let response;
 let btnStart = document.getElementById('btnStart');
 let video = document.getElementById('videoElement');
 let imageRecording = document.getElementById('resultRecording');
@@ -194,29 +195,34 @@ function uploadgGif() {
   )
 }
 
-function imageUploadingGif() {
+async function imageUploadingGif() {
+ 
   loading.setAttribute('src', './assets/ok.svg');
   overlayLoadingText.innerHTML = 'GIFO subido con éxito';
   console.log('Gif uploaded succesfully!');
+
+  let request = await fetch(`https://api.giphy.com/v1/gifs/${info}?api_key=${apiKey}`);
+  response = await request.json();
+  let urlGif = response.data.images.original.url;
+
+  console.log(response);
+
   let buttonsUpload = document.createElement('div');
   buttonsUpload.className = "buttonsUpload";
   buttonsUpload.innerHTML = `<button id="download" class="download"><img src="./assets/icon-download.svg" alt="descargar"></button>
-  <button id="link" class="download"><img src="./assets/icon-link-normal.svg" alt="enlace"></button>`;
+  <button id="link" class="link"><a href="${urlGif}" target="_blank"><img src="./assets/icon-link-normal.svg" alt="enlace a imagen"></a></button>`;
   overlay.appendChild(buttonsUpload);
+
   let downloadbtn = document.getElementById('download');
-  downloadbtn.addEventListener('click', () => {
-    downloadFunction(downloadbtn, info);
-  });
+  downloadbtn.addEventListener('click', () => downloadFunction(response, urlGif));
 }
 
 /* download function */
 
-async function downloadFunction(downloadbtn, info) {
-  console.log(info);
+async function downloadFunction(response, urlGif) {
 
-  let request = await fetch(`https://api.giphy.com/v1/gifs/${info}?api_key=${apiKey}`);
-  let response = await request.json();
-  console.log(request, response);
+  downloadFile(urlGif, `${response.data.title}`);
+
     // .then((response) => {
     // console.log(response);
     // console.log(getImage);
@@ -225,8 +231,6 @@ async function downloadFunction(downloadbtn, info) {
     //   console.log(response, urlGifo);
     // });
   // console.log(idGifo);
-  let urlGif = response.data.images.original.url;
-  downloadFile(urlGif, `${response.data.title}`);
 
   // downloadbtn.addEventListener('click', () => {
   //   let res = fetch(`https://api.giphy.com/v1/gifs/${info}?api_key=${apiKey}`)
