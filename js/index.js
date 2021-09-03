@@ -72,6 +72,7 @@ function renderResults(suggestions, results, input) {
             searchInput.value = contentSearch;
             search = searchInput.value;
             gifCardsFounded.innerHTML = '';
+            initialPosition = 0;
             trending.className = 'none';
             showMore.className = 'showMore';
             titleSearch.className = 'titleSearchedGifs';
@@ -92,6 +93,7 @@ searchIcon.addEventListener('click', () => {
     thinLine.className = 'thinLine';
     searchIcon.setAttribute('src', './assets/close.svg');
     gifCardsFounded.innerHTML = '';
+    initialPosition = 0;
     inputSearch(search);
 });
 
@@ -115,7 +117,7 @@ async function renderViewCardsSearch(infoAPI) {
 
     let i;
     let finalPosition = initialPosition + 12;
-    console.log("initialposition", initialPosition, "finalposition", finalPosition, "infoApi", infoAPI.length);
+    // console.log("initialposition", initialPosition, "finalposition", finalPosition, "infoApi", infoAPI.length);
 
     if (initialPosition > finalPosition) {
         finalPosition = infoAPI.length;
