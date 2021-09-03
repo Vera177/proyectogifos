@@ -1,4 +1,4 @@
-import {favouriteBottonAndSetStoragee, downloadFunction, superSizeRender} from "./modules/renderView.js";
+import { favouriteBottonAndSetStoragee, downloadFunction, superSizeRender } from "./modules/renderView.js";
 
 /* Search section */
 
@@ -8,6 +8,7 @@ let searchIcon = document.getElementById('searchIcon');
 let searchFailed = document.getElementById('searchFailed');
 let search;
 let suggestions = [];
+let cross = document.getElementById('cross');
 
 /* Renderization section */
 
@@ -75,46 +76,75 @@ function renderResults(suggestions, results, input) {
             initialPosition = 0;
             trending.className = 'none';
             showMore.className = 'showMore';
-            titleSearch.className = 'titleSearchedGifs';
-            thinLine.className = 'thinLine';
-            searchIcon.setAttribute('src', './assets/close.svg')
+            titleSearch.classList.remove('titleSearch');
+            titleSearch.classList.add('titleSearchedGifs');
+            thinLine.classList.remove('thinLineHidden');
+            thinLine.classList.add('thinLine');
+            searchIcon.style.display = 'none';
+            cross.style.display = 'inline';
             inputSearch(search);
         });
     }
 }
 
-// event listener click
+// event listener click & enter
 
-searchIcon.addEventListener('click', () => {
+searchIcon.addEventListener('click', getsearch);
+searchInput.addEventListener('keyup', (e) => {
+    if (e.code === 'Enter') {
+        e.preventDefault();
+        getsearch();
+    }
+});
+
+function getsearch() {
     search = searchInput.value;
     trending.className = 'none';
     showMore.className = 'showMore';
-    titleSearch.className = 'titleSearchedGifs';
-    thinLine.className = 'thinLine';
-    searchIcon.setAttribute('src', './assets/close.svg');
+    titleSearch.classList.remove('titleSearch');
+    titleSearch.classList.add('titleSearchedGifs');
+    thinLine.classList.remove('thinLineHidden');
+    thinLine.classList.add('thinLine');
+    searchIcon.style.display = 'none';
+    cross.style.display = 'inline';
     gifCardsFounded.innerHTML = '';
     initialPosition = 0;
     inputSearch(search);
-});
+}
+
+cross.addEventListener('click', () => {
+    gifCardsFounded.innerHTML = '';
+    initialPosition = 0;
+    searchIcon.style.display = 'inline';
+    cross.style.display = 'none';
+    searchInput.value = '';
+    trending.className = 'trending';
+    titleSearch.classList.remove('titleSearchedGifs');
+    titleSearch.classList.add('titleSearch');
+    thinLine.classList.add('thinLineHidden');
+    showMore.style.display = 'none';
+    resultsWrapper.innerHTML = '';
+    thinLineSuggestion.classList.remove('lineGray');
+})
 
 async function inputSearch(search) {
     let response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${search}&offset=0&rating=g&lang=en`);
     let info = await response.json();
-    if (!info.data[1]){
+    if (!info.data[1]) {
         noSearch();
     }
-    else{
+    else {
         renderViewCardsSearch(info);
     }
 }
 
-function noSearch(){
+function noSearch() {
     searchFailed.style.display = 'flex';
     showMore.style.display = 'none';
 }
 
 async function renderViewCardsSearch(infoAPI) {
-
+    searchIcon.setAttribute('src', '/assets/icon-search.svg');
     let i;
     let finalPosition = initialPosition + 12;
     // console.log("initialposition", initialPosition, "finalposition", finalPosition, "infoApi", infoAPI.length);
@@ -145,7 +175,7 @@ async function renderViewCardsSearch(infoAPI) {
         let superSizebtn = document.getElementById(`superSize_${[i]}`);
         let downloadbtn = document.getElementById(`download_${[i]}`);
         favouriteBottonAndSetStoragee(i, infoAPI);
-        downloadFunction(i, downloadbtn,infoAPI);
+        downloadFunction(i, downloadbtn, infoAPI);
         superSizeRender(i, infoAPI, superSizebtn);
     }
 
@@ -173,7 +203,8 @@ async function getTrendingSearchs() {
         showMore.className = 'showMore';
         titleSearch.className = 'titleSearchedGifs';
         thinLine.className = 'thinLine';
-        searchIcon.setAttribute('src', './assets/close.svg');
+        searchIcon.style.display = 'none';
+        cross.style.display = 'inline';
         search = e.target.innerHTML;
         inputSearch(search);
     })

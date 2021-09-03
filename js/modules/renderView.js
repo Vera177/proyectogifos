@@ -117,18 +117,20 @@ loaddStorage();
 export function favouriteBottonAndSetStoragee(i, info, favouriteMax) {
     let favouriteBottons = document.getElementById(`favourite_${[i]}`);
     if(favouriteMax){
-        favouriteMax.addEventListener('click', function () {
+        favouriteMax.addEventListener('click', function favMax () {
             console.log(`You clicked on button ${i}`);
             favouriteMax.innerHTML = '<img src="./assets/icon-fav-active.svg" alt="guardar favorito">';
             favouriteGifs.push(info.data[i].id);
             localStorage.setItem('favourites', JSON.stringify(favouriteGifs));
+            favouriteMax.removeEventListener('click', favMax);
         });
     }else{
-        favouriteBottons.addEventListener('click', function () {
+        favouriteBottons.addEventListener('click', function favNormal () {
             console.log(`You clicked on button ${i}`);
             favouriteBottons.innerHTML = '<img src="./assets/icon-fav-active.svg" alt="guardar favorito">';
             favouriteGifs.push(info.data[i].id);
             localStorage.setItem('favourites', JSON.stringify(favouriteGifs));
+            favouriteBottons.removeEventListener('click', favNormal);
         });
     }
     // hoverSection(favouriteBottons);
