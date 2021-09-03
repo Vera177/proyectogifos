@@ -316,28 +316,15 @@ body.dark .titleSearchedGifs {
   display: -ms-grid;
   display: grid;
   grid-gap: 20px;
-  -ms-grid-columns: (260px)[4];
-      grid-template-columns: repeat(4, 260px);
+  -ms-grid-columns: (156px)[2];
+      grid-template-columns: repeat(2, 156px);
   padding: 0;
   list-style: none;
 }
 
-@media (max-width: 500px) {
-  .gifCardsFounded {
-    -ms-grid-columns: (156px)[2];
-        grid-template-columns: repeat(2, 156px);
-  }
-}
-
 .gifCardsFounded img {
   width: 100%;
-  height: 200px;
-}
-
-@media (max-width: 500px) {
-  .gifCardsFounded img {
-    height: 120px;
-  }
+  height: 120px;
 }
 
 .gifCardsFounded .overlayGifsSearch {
@@ -566,7 +553,6 @@ body.dark .trendingGifos .checkThemOut {
 
 .fullSizeContent {
   width: 100%;
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -589,47 +575,17 @@ body.dark .trendingGifos .checkThemOut {
   cursor: pointer;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  margin-right: 10%;
-}
-
-@media (max-width: 765px) {
-  .hideContent {
-    margin-right: 0;
-  }
+  margin-right: 5%;
 }
 
 .imageInfoContainer {
-  width: 55%;
-  margin-top: 25px;
-}
-
-@media (max-width: 765px) {
-  .imageInfoContainer {
-    width: 100%;
-  }
-}
-
-@media (min-width: 907px) {
-  .imageInfoContainer {
-    width: 45%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .imageInfoContainer {
-    width: 35%;
-  }
+  max-width: 100%;
 }
 
 .imageInfoContainer .superSizeImage {
   width: 100%;
-  height: auto;
-}
-
-@media (max-width: 765px) {
-  .imageInfoContainer .superSizeImage {
-    padding: 0 20px;
-  }
+  max-height: 80%;
+  padding: 0 20px;
 }
 
 .imageInfoContainer .info {
@@ -652,7 +608,8 @@ body.dark .trendingGifos .checkThemOut {
   display: block;
 }
 
-@media (min-width: 768px) {
+/* desktop */
+@media (min-width: 780px) {
   .helloImg {
     width: 40vw;
   }
@@ -662,6 +619,13 @@ body.dark .trendingGifos .checkThemOut {
   }
   .title {
     font-size: 35px;
+  }
+  .gifCardsFounded {
+    -ms-grid-columns: (260px)[4];
+        grid-template-columns: repeat(4, 260px);
+  }
+  .gifCardsFounded img {
+    height: 200px;
   }
 }
 
