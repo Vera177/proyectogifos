@@ -9,6 +9,17 @@ let searchFailed = document.getElementById('searchFailed');
 let search;
 let suggestions = [];
 
+/* Renderization section */
+
+let gifCardsFounded = document.getElementById('gifCardsFounded');
+let resultContainer = document.getElementById('resultContainer');
+let titleSearch = document.getElementById('titleSearch');
+let cardGifoFounded;
+let ulContainer;
+let thinLine = document.getElementById('thinLine');
+let showMore = document.getElementById('showMore');
+let initialPosition = 0;
+
 //suggestions search
 
 searchInput.addEventListener('keyup', () => {
@@ -60,6 +71,7 @@ function renderResults(suggestions, results, input) {
             let contentSearch = suggestionWordli[i].textContent;
             searchInput.value = contentSearch;
             search = searchInput.value;
+            gifCardsFounded.innerHTML = '';
             trending.className = 'none';
             showMore.className = 'showMore';
             titleSearch.className = 'titleSearchedGifs';
@@ -79,6 +91,7 @@ searchIcon.addEventListener('click', () => {
     titleSearch.className = 'titleSearchedGifs';
     thinLine.className = 'thinLine';
     searchIcon.setAttribute('src', './assets/close.svg');
+    gifCardsFounded.innerHTML = '';
     inputSearch(search);
 });
 
@@ -93,25 +106,16 @@ async function inputSearch(search) {
     }
 }
 
-/* Renderization */
-
-let gifCardsFounded = document.getElementById('gifCardsFounded');
-let resultContainer = document.getElementById('resultContainer');
-let titleSearch = document.getElementById('titleSearch');
-let cardGifoFounded;
-let ulContainer;
-let thinLine = document.getElementById('thinLine');
-let showMore = document.getElementById('showMore');
-let initialPosition = 0;
-
 function noSearch(){
     searchFailed.style.display = 'flex';
     showMore.style.display = 'none';
 }
 
 async function renderViewCardsSearch(infoAPI) {
+
     let i;
     let finalPosition = initialPosition + 12;
+    console.log("initialposition", initialPosition, "finalposition", finalPosition, "infoApi", infoAPI.length);
 
     if (initialPosition > finalPosition) {
         finalPosition = infoAPI.length;
