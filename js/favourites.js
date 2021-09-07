@@ -19,7 +19,7 @@ export async function getImagess() {
         })
     };
   
-    if (!favouriteGifsOriginal) {
+    if (!favouriteGifsOriginal || favouriteGifsOriginal.length === 0) {
         noFavAdded();
     } else {
         //forma1
