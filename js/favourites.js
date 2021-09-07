@@ -12,8 +12,10 @@ let showMore = document.getElementById('showMore');
 export async function getImagess() {
 
     favouriteGifsOriginal = JSON.parse(localStorage.getItem('favourites'));
-    favouriteGifs = new Set (favouriteGifsOriginal);
-    console.log("original", favouriteGifsOriginal, "sin repes", favouriteGifs);
+    favouriteGifs = favouriteGifsOriginal.filter((value, index) => {
+        return favouriteGifsOriginal.indexOf(value) == index
+    })
+
     if (!favouriteGifs) {
         noFavAdded();
     } else {
@@ -94,13 +96,3 @@ function renderViewFav(infoMyGif) {
 
     showMore.style.display = 'block';
 }
-
-let arr = [1,2,3,3,4,5,5,5,5,5];
-
-let unicos = new Set(arr);
-
-console.log("Unicos: ", [...unicos]);
-
-let repes = ["hola", "hola", "Manuela", "eugenia"];
-let unicoss = new Set(repes);
-console.log(unicoss);
