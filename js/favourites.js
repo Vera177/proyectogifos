@@ -12,11 +12,14 @@ let showMore = document.getElementById('showMore');
 export async function getImagess() {
 
     favouriteGifsOriginal = JSON.parse(localStorage.getItem('favourites'));
-    favouriteGifs = favouriteGifsOriginal.filter((value, index) => {
-        return favouriteGifsOriginal.indexOf(value) == index
-    })
-
-    if (!favouriteGifs) {
+    
+    if(favouriteGifsOriginal){
+        favouriteGifs = favouriteGifsOriginal.filter((value, index) => {
+            return favouriteGifsOriginal.indexOf(value) == index
+        })
+    };
+  
+    if (!favouriteGifsOriginal) {
         noFavAdded();
     } else {
         //forma1
